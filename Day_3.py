@@ -34,7 +34,7 @@ if height >= 120:
     age = int(input("What is your age? "))
     if age < 12:
         print("Please pay $5")
-    elif age >=12 and age <=18:
+    elif age >= 12 and age <= 18:
         print("Please pay $7")
     else:
         print("Pleas pay $12")
@@ -50,7 +50,6 @@ else:
 # Over 25 but below 30 they are slightly overweight
 # Over 30 but below 35 they are obese
 # Above 35 they are clinically obese.
-
 
 
 height_two = float(input("What is your height in m? "))
@@ -70,14 +69,13 @@ else:
     print(f"Your BMI is {bmi}, you are clinically obese.")
 
 
-
 # Excercise: Check if the year is a leap year
 
 # This is how you work out whether if a particular year is a leap year.
 
-# on every year that is evenly divisible by 4 
+# on every year that is evenly divisible by 4
 
-# **except** every year that is evenly divisible by 100 
+# **except** every year that is evenly divisible by 100
 
 # **unless** the year is also evenly divisible by 400
 
@@ -103,7 +101,7 @@ else:
     print("Not leap year.")
 
 
-# Excercise: 
+# Excercise:
 # Based on a user's order, work out their final bill.
 
 # Small Pizza: $15
@@ -135,9 +133,97 @@ else:
 if add_pepperoni == "Y":
     if size == "S":
         bill += 2
-    else: 
+    else:
         bill += 3
 
 if extra_cheese == "Y":
     bill += 1
 print(f"Your final bill is: ${bill} ")
+
+
+# Excercise:
+your_name = input("What is your name? ").lower()
+
+partner_name = input("What is their name? ").lower()
+
+
+combine_name = your_name + partner_name
+
+
+t = combine_name.count("t")
+r = combine_name.count("r")
+u = combine_name.count("u")
+e = combine_name.count("e")
+
+
+l = combine_name.count("l")
+o = combine_name.count("o")
+v = combine_name.count("v")
+e = combine_name.count("e")
+
+true = t + r + u + e
+love = l + o + v + e
+
+love_score = int(str(true) + str(love))
+
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}")
+
+
+# Project:
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+
+
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+
+
+reply = input(
+    "You are at a crossroad. Where do you want to go? Type \"left\" or \"right\".\n ").lower()
+
+
+if reply == "left":
+    reply2 = input(
+        "You've come to a lake. There is an island in the middle of the lake. Type \"wait\" to wait for a boat. Type \"swim\" to swim across.\n ").lower()
+
+    if reply2 == "wait":
+        reply3 = input(
+            "You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose? \n").lower()
+
+        if reply3 == "red":
+            print("It's a room full of fire. Game Over.")
+        elif reply3 == "blue":
+            print("You enter a room of beasts. Game Over.")
+        elif reply3 == "yellow":
+            print("You found the treasure! You Win!")
+        else:
+            print("You chose a door that doesn't exist. Game Over.")
+    else:
+        print("You get attacked by an angry trout. Game Over.")
+else:
+    print("You've fallen into a hole. Game Over")
